@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Genos:wght@400&display=swap');
 
 :root {
-    --navBack: rgba(55, 52, 56, 0.767);
+    --navBack: rgba(55, 52, 56, 1);
     --background: rgb(129, 196, 85);
+    --pink: #FF0099;
+    --green: #00BF63;
 }
 
 body {
     font-family: 'Genos', sans-serif;
-    background: var(--background);
-
 }
 
 header {
@@ -60,7 +60,7 @@ nav a {
 }
 
 nav a:hover{
-    color: #000;
+    color: #FF0099;
 }
 
 .logo-image {
@@ -162,7 +162,7 @@ header {
         content: '';
         display: block;
         height: 5px;
-        background: black;
+        background: #FF0099;
         position: absolute;
         top: -.75em;
         left: 0;
@@ -175,4 +175,197 @@ header {
     nav a:hover::before {
         transform: scale(1,1);
     }
+}
+
+.banner-area {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(andysweddingblackandwhite.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.content-area {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.content {
+    text-align: center;
+}
+
+.content h1  {
+    font-size: 80px;
+    color: var(--pink);
+    margin: 0;
+    rotate: -20deg;
+    -webkit-animation: slide-in-bck-left 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-bck-left 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    -webkit-transition: font-size 0.5s;
+    transition: font-size 0.5s;
+}
+
+.content h1:hover {
+    font-size: 100px;
+}
+
+@-webkit-keyframes slide-in-bck-left {
+    0% {
+        -webkit-transform: translateZ(700px) translateX(-400px);
+        transform: translateZ(700px) translateX(-400px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateZ(0) translateX(0);
+        transform: translateZ(0) translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-bck-left {
+    0% {
+        -webkit-transform: translateZ(700px) translateX(-400px);
+        transform: translateZ(700px) translateX(-400px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateZ(0) translateX(0);
+        transform: translateZ(0) translateX(0);
+        opacity: 1;
+    }
+}
+
+.content p {
+    font-size: 30px;
+    color: var(--pink);
+    margin: 20px;
+    rotate: -20deg;
+    -webkit-animation: slide-in-bck-left 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s both;
+    animation: slide-in-bck-left 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s both;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    padding: 15px;
+    border-radius: 4px;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    background: var(--pink);
+    rotate: -20deg;
+    -webkit-transition: font-size 0.5s;
+    transition: font-size 0.5s;
+}
+
+.btn:hover {
+    background: var(--green);
+    color: white;
+    font-size: 28px;
+}
+
+.slide-in-bck-left {
+    -webkit-animation: slide-in-bck-left 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-bck-left 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--navBack);
+    height: 100vh;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.aboutCard {
+    color: white;
+    margin: 20px 25%;
+}
+
+.aboutCard h1 {
+    text-align: center;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
+}
+
+form {
+    display: grid;
+    grid-template-columns: minmax(200px, 3fr);
+    grid-gap: 10px;
+    font-size: 30px;
+}
+
+form .message {
+    height: 150px;
+    vertical-align: text-top;
+}
+
+form input, form textarea {
+    padding: 10px;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: var(--green) 2px solid;
+}
+
+form input:focus,
+form textarea:focus {
+    border: var(--pink) 2px solid;
+    outline: var(--pink) 2px solid;
+}
+
+form .btn {
+    rotate: 0deg;
+}
+
+.footer-container {
+    background-color: var(--navBack);
+    color: white;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    height: 50px;
+}
+
+.eventsContainer {
+    display: grid;
+    grid-template-columns: minmax(200px, 600px);
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
+}
+
+.eventsContainer h1 {
+    text-align: center;
+
+}
+
+.eventCard {
+    border: 2px solid var(--green);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.eventCard:hover {
+    border: 2px solid var(--pink);
+    font-size: 1rem;
 }
