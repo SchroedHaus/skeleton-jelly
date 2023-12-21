@@ -306,7 +306,7 @@ header {
 
 form {
     display: grid;
-    grid-template-columns: minmax(200px, 3fr);
+    grid-template-columns: minmax(200px, 600px);
     grid-gap: 10px;
     font-size: 30px;
 }
