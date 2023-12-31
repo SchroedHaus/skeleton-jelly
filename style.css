@@ -198,7 +198,7 @@ header {
 }
 
 .content h1  {
-    font-size: 80px;
+    font-size: 60px;
     color: var(--pink);
     margin: 0;
     rotate: -20deg;
@@ -206,10 +206,7 @@ header {
     animation: slide-in-bck-left 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     -webkit-transition: font-size 0.5s;
     transition: font-size 0.5s;
-}
-
-.content h1:hover {
-    font-size: 100px;
+    width: 80%;
 }
 
 @-webkit-keyframes slide-in-bck-left {
@@ -281,7 +278,7 @@ header {
     justify-content: center;
     align-items: center;
     background-color: var(--navBack);
-    height: 100vh;
+    /* height: 100vh; */
     padding-top: 30px;
     padding-bottom: 30px;
 }
@@ -306,9 +303,10 @@ header {
 
 form {
     display: grid;
-    grid-template-columns: minmax(200px, 600px);
+    grid-template-columns: minmax(300px, 600px);
     grid-gap: 10px;
     font-size: 30px;
+    margin: 10px;
 }
 
 form .message {
