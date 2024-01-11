@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Genos:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@font-face {
+    font-family: "Brushield Italic";
+    src: url('Brushield\ italic.ttf') format('truetype');
+}
 
 :root {
     --navBack: rgba(55, 52, 56, 1);
@@ -22,7 +26,7 @@ header {
 nav {
     list-style: none;
     color: white;
-    font-size: 20px;
+    font-size: 1.2rem;
     position: absolute;
     text-align: left;
     top: 100%;
@@ -66,6 +70,23 @@ nav a:hover{
 .logo-image {
     width: 200px;
     margin: 0;
+}
+
+.logo-image .whiteLogo {
+    width: 200px;
+}
+
+.logo-image .pinkLogo {
+    display: none;
+    width: 200px;
+}
+
+.logo-image:hover .pinkLogo {
+    display: inline;
+}
+
+.logo-image:hover .whiteLogo {
+    display: none;
 }
 
 /* navigation styles start here */
@@ -125,6 +146,7 @@ header {
     header {
         display: grid;
         grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+        position: fixed;
     }
 
     .logo-image {
@@ -190,7 +212,6 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .content {
@@ -198,15 +219,14 @@ header {
 }
 
 .content h1  {
-    font-size: 60px;
+    font-size: 6rem;
+    line-height: 4rem;
     color: var(--pink);
-    margin: 0;
-    rotate: -20deg;
     -webkit-animation: slide-in-bck-left 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     animation: slide-in-bck-left 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     -webkit-transition: font-size 0.5s;
     transition: font-size 0.5s;
-    width: 80%;
+    font-family: 'Brushield Italic', sans-serif;
 }
 
 @-webkit-keyframes slide-in-bck-left {
@@ -238,10 +258,11 @@ header {
 }
 
 .content p {
-    font-size: 30px;
+    font-size: 2.5rem;
     color: var(--pink);
-    margin: 20px;
-    rotate: -20deg;
+    font-weight: bold;
+    margin: 1em;
+    /* rotate: -20deg; */
     -webkit-animation: slide-in-bck-left 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s both;
     animation: slide-in-bck-left 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s both;
 }
@@ -252,11 +273,11 @@ header {
     padding: 15px;
     border-radius: 4px;
     color: white;
-    font-size: 22px;
+    font-size: 1.3rem;
     font-weight: bold;
     cursor: pointer;
     background: var(--pink);
-    rotate: -20deg;
+    /* rotate: -20deg; */
     -webkit-transition: font-size 0.5s;
     transition: font-size 0.5s;
 }
@@ -264,7 +285,7 @@ header {
 .btn:hover {
     background: var(--green);
     color: white;
-    font-size: 28px;
+    font-size: 1.5rem;
 }
 
 .slide-in-bck-left {
@@ -278,7 +299,7 @@ header {
     justify-content: center;
     align-items: center;
     background-color: var(--navBack);
-    /* height: 100vh; */
+    min-height: 100vh;
     padding-top: 30px;
     padding-bottom: 30px;
 }
@@ -298,14 +319,14 @@ header {
     justify-content: center;
     align-items: center;
     align-content: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 form {
     display: grid;
     grid-template-columns: minmax(300px, 600px);
     grid-gap: 10px;
-    font-size: 30px;
+    font-size: 1.9rem;
     margin: 10px;
 }
 
@@ -349,21 +370,49 @@ form .btn {
     justify-content: center;
     align-items: center;
     align-content: center;
-    height: 100vh;
+    min-height: 100vh;
+    position: relative;
+}
+
+.eventsContainer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(barleymow-gig.jpg);
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
+    z-index: -1;
 }
 
 .eventsContainer h1 {
     text-align: center;
+    color: white;
+    font-size: 3rem;
 
 }
 
 .eventCard {
-    border: 2px solid var(--green);
-    padding: 20px;
+    border: 1em solid var(--green);
+    padding: 3em;
     border-radius: 20px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.123);
+    font-size: 1rem;
 }
 
 .eventCard:hover {
-    border: 2px solid var(--pink);
-    font-size: 1rem;
+    border: 1em solid var(--pink);
+}
+
+.divider {
+    min-height: 5em;
+    background-color: rgb(163, 163, 163);
+    background-image: url(logos/skellies-logo4.png);
+    background-size: contain;
+    background-position: center;
+    padding: 3em;
 }

@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skeleton Jelly</title>
+    <title>Skellies</title>
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <img src="SKELETON JELLY (1).gif" alt="" class="logo-image">
+    <header id="header">
+        <a href="#banner-area" class="logo-image">
+            <img src="logos/skellies logo - text and skull - white - wide.png" alt="whiteLogo" class="whiteLogo">
+            <img src="logos/skellies logo - text and skull - pink both - wide.png" alt="pinkLogo" class="pinkLogo">
+        </a>
         <input type="checkbox" class="nav-toggle" id="nav-toggle">
-        <nav>
+        <nav id="nav">
             <ul class="menu">
-                <li><a href="#banner-area">Home</a></li>
-                <li><a href="#eventsContainer">Events</a></li>
-                <li><a href="#about-container">About</a></li>
-                <li><a href="#contact-container">Contact</a></li>
+                <li><a class="navlink" href="#banner-area">Home</a></li>
+                <li><a class="navlink" href="#eventsContainer">Events</a></li>
+                <li><a class="navlink" href="#about-container">About</a></li>
+                <li><a class="navlink" href="#contact-container">Contact</a></li>
             </ul>
         </nav>
         <label for="nav-toggle" class="nav-toggle-label">
@@ -27,12 +30,12 @@
         <div class="content-area">
             <div class="content">
                 <h1>Rock for the masses</h1>
-                <p>Top covers from the 80's, 90's and 00's for your event</p>
-                <button class="btn">Click Here</button>
-
+                <p>Top covers from the 80's, 90's and 00's for your people</p>
+                <a href="#contact-container"><button class="btn">Contact Us</button></a>
             </div>
         </div>
     </div>
+    <div class="divider"></div>
     <!-- main area -->
     <div class="eventsContainer" id="eventsContainer">
         <h1>Upcoming Gigs</h1>
@@ -43,6 +46,7 @@
             <p>Support the 1st Viking Walton Sea Scouts as they raise money for their new headquarters. We'll be playing all the hits at the fantastic Barley Mow, a traditional gastropub with the perfect party.</p>
         </div>
     </div>
+    <div class="divider"></div>
     <div class="about-container" id="about-container">
         <div class="aboutCard">
             <h1>We are Skeleton Jelly</h1>
@@ -65,13 +69,14 @@
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio ex rem error officiis illo quisquam illum molestiae fugit distinctio facere numquam possimus dolorum, natus explicabo cupiditate aliquid? Quibusdam, omnis incidunt.</p>
         </div>
     </div>
+    <div class="divider"></div>
     <div class="contact-container" id="contact-container">
         <h1>Contact Us</h1>
-        <form>
-            <input type="text" class="name" placeholder="your name">
-            <input type="email" class="email" placeholder="your email">
+        <form target="blank" action="https://formsubmit.co/matt.schroeder@pm.me" method="POST">
+            <input type="text" class="name" placeholder="your name*" required>
+            <input type="email" class="email" placeholder="your email*" required>
             <input type="tel" class="phone" placeholder="your phone">
-            <textarea class="message" placeholder="message"></textarea>
+            <textarea class="message" placeholder="message*" required></textarea>
             <button type="submit" class="btn">Submit</button>
         </form>
     </div>
@@ -79,5 +84,23 @@
         <div class="copyright">Copyright 2023</div>
         <div class="designer">Website built by Sweet Chilli Websites</div>
     </div>
+
+    <script>
+        const menuItem = document.querySelectorAll('.navlink');
+        const navToggle = document.querySelector('.nav-toggle');
+
+        menuItem.forEach(item => {
+            item.onclick = function() {
+                navToggle.checked = false;
+            }
+        });
+
+        document.onclick = function(e) {
+            if(e.target.id !== 'nav' && e.target.id !== 'nav-toggle') {
+                navToggle.checked = false;
+            }
+        }
+    </script>
+
 </body>
 </html>
