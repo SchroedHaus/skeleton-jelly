@@ -391,7 +391,7 @@ form .btn {
 .divider {
     min-height: 5em;
     background-color: rgb(163, 163, 163);
-    background-image: url(logos/skellies-logo4.png);
+    background-image: url(logos/skellies\ logo\ -\ text\ and\ skull\ -\ pink\ both\ -\ wide.png);
     background-size: 20%;
     background-position: center;
 }
@@ -419,28 +419,32 @@ form .btn {
 
 .aboutCard {
     display: grid;
-    grid-template-columns: auto auto;
-    grid-template-areas: 
+    grid-template-columns: auto;
+    /* grid-template-areas: 
     "pic name"
-    "pic bio";
+    "pic bio"; */
     gap: 5px 40px;
+    justify-content: center;
+    justify-items: center;
     align-items: center;
 }
 
 .about-container .profile-pic {
-    width: 100px;
-    grid-area: pic;
+    width: 200px;
+    /* grid-area: pic; */
     border-radius: 100px;
+    border: 5px solid var(--green);
 }
 
 .about-container .name {
-    grid-area: name;
+    /* grid-area: name; */
     color: var(--green);
     font-family: "Brushield Italic";
     font-size: 3rem;
+    margin: 0;
 }
 
 .about-container .aboutPara {
-    grid-area: bio;
+    /* grid-area: bio; */
 }
 
