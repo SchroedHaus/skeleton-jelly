@@ -509,22 +509,19 @@ form .btn {
     display: grid;
     height: 100%;
     /* grid-template-rows: auto; */
-    grid-template-columns: repeat(auto-fit, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
     margin: 10%;
 }
 
 .bandLogo img {
-    width: 120%;
-    object-fit: cover;
-    max-width: 500px;
-    /* min-width: 200px; */
+    max-width: 120%;
+    object-fit: cover;    
 }
 
 .bandLogo {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: auto;
     position: relative;
 
     &.small {
