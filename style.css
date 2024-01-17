@@ -197,18 +197,22 @@ header {
     nav a:hover::before {
         transform: scale(1,1);
     }
+
+    .about-container .aboutIntro h1 {
+        font-size: 5rem;
+    }
 }
 
 .banner-area {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(andysweddingblackandwhite.jpg);
     background-size: cover;
     background-position: center;
 }
 
 .content-area {
-    height: 100%;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -216,55 +220,30 @@ header {
 
 .content {
     text-align: center;
+    border: 3px solid var(--pink);
+    margin: 100px 15%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.603);
 }
 
 .content h1  {
     font-size: 6rem;
     line-height: 4rem;
     color: var(--pink);
-    -webkit-animation: slide-in-bck-left 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    animation: slide-in-bck-left 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    -webkit-transition: font-size 0.5s;
-    transition: font-size 0.5s;
     font-family: 'Brushield Italic', sans-serif;
 }
 
-@-webkit-keyframes slide-in-bck-left {
-    0% {
-        -webkit-transform: translateZ(700px) translateX(-400px);
-        transform: translateZ(700px) translateX(-400px);
-        opacity: 0;
-    }
-
-    100% {
-        -webkit-transform: translateZ(0) translateX(0);
-        transform: translateZ(0) translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slide-in-bck-left {
-    0% {
-        -webkit-transform: translateZ(700px) translateX(-400px);
-        transform: translateZ(700px) translateX(-400px);
-        opacity: 0;
-    }
-
-    100% {
-        -webkit-transform: translateZ(0) translateX(0);
-        transform: translateZ(0) translateX(0);
-        opacity: 1;
-    }
+.content h2 {
+    font-family: 'Brushield Italic', sans-serif;
+    color: var(--pink);
+    font-size: 4rem;
 }
 
 .content p {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     color: var(--pink);
     font-weight: bold;
     margin: 1em;
-    /* rotate: -20deg; */
-    -webkit-animation: slide-in-bck-left 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s both;
-    animation: slide-in-bck-left 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s both;
 }
 
 .btn {
@@ -285,7 +264,7 @@ header {
 .btn:hover {
     background: var(--green);
     color: white;
-    font-size: 1.5rem;
+    font-size: 5rem;
 }
 
 .slide-in-bck-left {
@@ -300,6 +279,12 @@ header {
     align-items: center;
     align-content: center;
     min-height: 100vh;
+}
+
+.contact-container .contactHeader {
+    font-family: "Brushield Italic";
+    font-size: 5rem;
+    margin: 0;
 }
 
 form {
@@ -335,7 +320,7 @@ form .btn {
 
 .footer-container {
     background-color: var(--navBack);
-    color: white;
+    color: rgba(255, 255, 255, 0.753);
     display: grid;
     grid-template-columns: auto auto;
     justify-content: center;
@@ -346,12 +331,13 @@ form .btn {
 
 .eventsContainer {
     display: grid;
-    grid-template-columns: minmax(200px, 600px);
+    grid-template-columns: minmax(200px, 1000px);
     justify-content: center;
     align-items: center;
     align-content: center;
     min-height: 100vh;
     position: relative;
+    padding: 40px 0;
 }
 
 .eventsContainer::before {
@@ -371,29 +357,73 @@ form .btn {
 .eventsContainer h1 {
     text-align: center;
     color: white;
-    font-size: 3rem;
-
+    font-size: 4rem;
+    font-family: "Brushield Italic", sans-serif;
 }
 
 .eventCard {
-    border: 1em solid var(--green);
-    padding: 3em;
-    border-radius: 20px;
+    border: 3px solid var(--green);
+    padding: 1em;
     color: white;
-    background-color: rgba(255, 255, 255, 0.123);
-    font-size: 1rem;
-}
-
-.eventCard:hover {
-    border: 1em solid var(--pink);
+    background-color: rgba(0, 0, 0, 0.603);
+    font-size: 1.5rem;
+    text-align: center;
 }
 
 .divider {
     min-height: 5em;
     background-color: rgb(163, 163, 163);
-    background-image: url(logos/skellies\ logo\ -\ text\ and\ skull\ -\ pink\ both\ -\ wide.png);
+    background-image: url("new logos/the\ skellies\ -\ pink.png");
     background-size: 20%;
     background-position: center;
+    opacity: 0.6;
+}
+
+
+
+.btn {
+    font-family: "Brushield Italic";
+    font-size: 3rem;
+}
+
+.image {
+    width: 400px;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+    min-height: 100vh;
+    margin: 2em;
+}
+
+.grid img {
+    width: 400px;
+    cursor: pointer;
+}
+
+#lightbox {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.8);
+    display: none;
+}
+
+#lightbox.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#lightbox img {
+    width: 90%;
 }
 
 .about-container {
@@ -401,8 +431,11 @@ form .btn {
     background-color: var(--navBack);
     display: flex;
     flex-direction: column;
-    padding: 20px 20%;
+    padding: 100px 20%;
     font-size: 1.25rem;
+    background: url("gallery/Skellies\ about\ background.png");
+    background-size: cover;
+    background-position: center;
 }
 
 .aboutIntro {
@@ -410,41 +443,239 @@ form .btn {
     grid-area: content;
 }
 
-.about-container h1 {
+.aboutGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 5px;
+    column-gap: 10px;
+
+}
+
+.picCard {
+    position: relative;
+}
+
+.picCard img {
+    max-width: 400px;
+    border: 3px solid var(--green);
+}
+
+.picCard h2 {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translate(-50%);
+    font-family: "Brushield Italic", sans-serif;
+    color: white;
+    font-size: 4rem;
+}
+
+.about-container .aboutIntro h1 {
     font-family: "Brushield Italic";
     color: var(--green);
     text-align: center;
-    font-size: 5rem;
-}
-
-.aboutCard {
-    display: grid;
-    grid-template-columns: auto;
-    /* grid-template-areas: 
-    "pic name"
-    "pic bio"; */
-    gap: 5px 40px;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-}
-
-.about-container .profile-pic {
-    width: 200px;
-    /* grid-area: pic; */
-    border-radius: 100px;
-    border: 5px solid var(--green);
-}
-
-.about-container .name {
-    /* grid-area: name; */
-    color: var(--green);
-    font-family: "Brushield Italic";
-    font-size: 3rem;
+    font-size: 4rem;
     margin: 0;
 }
 
-.about-container .aboutPara {
-    /* grid-area: bio; */
+.cover-container {
+    padding: 30px 10%;
+    position:relative;
 }
 
+.cover-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("background/brick\ wall.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
+    z-index: -1;
+}
+
+
+.cover-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.logoFlexBox {
+    display: grid;
+    height: 100%;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.bandLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    position: relative;
+
+    &.small {
+        grid-row: span 1;
+        grid-column: span 1;
+    }
+
+    &.medium {
+        grid-row: span 2;
+        grid-column: span 2;
+    }
+
+    &.large {
+        grid-row: span 3;
+        grid-column: span 3;
+    }
+
+    &.tall {
+        grid-row: span 2;
+        grid-column: span 1;
+    }
+
+    &.wide {
+        grid-row: span 1;
+        grid-column: span 3;
+    }
+}
+
+.bandLogo img {
+    width: 120%;
+    object-fit: cover;
+}
+
+.cover-container :nth-child(20) {
+    order: 1;
+}
+
+.cover-container :nth-child(12) {
+    order: 2;
+}
+
+.cover-container :nth-child(23) {
+    order: 3;
+}
+
+.cover-container :nth-child(18) {
+    order: 4;
+}
+
+.cover-container :nth-child(21) {
+    order: 9;
+}
+
+.cover-container :nth-child(15) {
+    order: 5;
+}
+
+.cover-container :nth-child(9) {
+    order: 6;
+}
+
+.cover-container :nth-child(9) img {
+    width: 100px;
+}
+
+.cover-container :nth-child(1) {
+    order: 7;
+}
+
+.cover-container :nth-child(26) {
+    order: 8;
+}
+
+.cover-container :nth-child(5) {
+    order: 9;
+}
+
+.cover-container :nth-child(26) {
+    order: 10;
+}
+
+.cover-container :nth-child(7) {
+    order: 11;
+}
+
+.cover-container :nth-child(27) {
+    order: 12;
+}
+
+.cover-container :nth-child(8) {
+    order: 13;
+}
+
+.cover-container :nth-child(28) {
+    order: 14;
+}
+
+.cover-container :nth-child(14) {
+    order: 15;
+}
+
+.cover-container :nth-child(6) {
+    order: 16;
+}
+
+.cover-container :nth-child(22) {
+    order: 17;
+}
+
+.cover-container :nth-child(16) {
+    order: 17;
+}
+
+.cover-container :nth-child(13) {
+    order: 18;
+}
+
+.cover-container :nth-child(11) {
+    order: 19;
+}
+
+.cover-container :nth-child(24) {
+    order: 20;
+}
+
+.cover-container :nth-child(4) {
+    order: 21;
+}
+
+.cover-container :nth-child(19) {
+    order: 22;
+}
+
+.cover-container :nth-child(17) {
+    order: 23;
+}
+
+.cover-container :nth-child(2) {
+    order: 24;
+}
+
+.cover-container :nth-child(5) {
+    order: 25;
+}
+
+.cover-container :nth-child(25) {
+    order: 26;
+}
+
+.cover-container :nth-child(3) {
+    order: 27;
+}
+
+.cover-container :nth-child(10) {
+    order: 28;
+}
+
+.coverHeader {
+    font-family: "Brushield Italic", sans-serif;
+    font-size: 2.5rem;
+    color: white;
+}

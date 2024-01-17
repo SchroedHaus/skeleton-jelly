@@ -1,0 +1,122 @@
+.cover-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.logoFlexBox {
+    display: grid;
+    height: 100%;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    /* grid-gap: -20px; */
+    /* grid-auto-flow: dense; */
+}
+
+.bandLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 3px solid hotpink; */
+    height: auto;
+    position: relative;
+
+    &.small {
+        grid-row: span 1;
+        grid-column: span 1;
+    }
+
+    &.medium {
+        grid-row: span 2;
+        grid-column: span 2;
+    }
+
+    &.large {
+        grid-row: span 3;
+        grid-column: span 3;
+    }
+
+    &.tall {
+        grid-row: span 2;
+        grid-column: span 1;
+    }
+
+    &.wide {
+        grid-row: span 1;
+        grid-column: span 3;
+    }
+}
+
+.bandLogo img {
+    width: 120%;
+    object-fit: cover;
+}
+
+.cover-container :nth-child(20) {order: 1;}
+
+.cover-container :nth-child(12) {order: 2;}
+
+.cover-container :nth-child(23) {order: 3;}
+
+.cover-container :nth-child(18) {order: 4;}
+
+.cover-container :nth-child(21) {order: 9;}
+
+.cover-container :nth-child(15) {order: 5;}
+
+.cover-container :nth-child(9) {order: 6;}
+
+.cover-container :nth-child(9) img {width: 100px;}
+
+.cover-container :nth-child(1) {order: 7;}
+
+.cover-container :nth-child(26) {order: 8;}
+
+.cover-container :nth-child(5) {order: 9;}
+
+.cover-container :nth-child(26) {order: 10;}
+
+.cover-container :nth-child(7) {order: 11;}
+
+.cover-container :nth-child(27) {order: 12;}
+
+.cover-container :nth-child(8) {order: 13;}
+
+.cover-container :nth-child(28) {order: 14;}
+
+.cover-container :nth-child(14) {order: 15;}
+
+.cover-container :nth-child(6) {order: 16;}
+
+.cover-container :nth-child(22) {order: 17;}
+
+.cover-container :nth-child(16) {order: 17;}
+
+.cover-container :nth-child(13) {order: 18;}
+
+.cover-container :nth-child(11) {order: 19;}
+
+.cover-container :nth-child(24) {order: 20;}
+
+.cover-container :nth-child(4) {order: 21;}
+
+.cover-container :nth-child(19) {order: 22;}
+
+.cover-container :nth-child(17) {order: 23;}
+
+.cover-container :nth-child(2) {order: 24;}
+
+.cover-container :nth-child(5) {order: 25;}
+
+.cover-container :nth-child(25) {order: 26;}
+
+.cover-container :nth-child(3) {order: 27;}
+
+.cover-container :nth-child(10) {order: 28;}
+
+.coverHeader {
+    font-family: "Brushield Italic", sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    color: black;
+}
+
