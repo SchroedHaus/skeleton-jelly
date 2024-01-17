@@ -508,8 +508,16 @@ form .btn {
 .logoFlexBox {
     display: grid;
     height: 100%;
-    grid-template-rows: auto;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    /* grid-template-rows: auto; */
+    grid-template-columns: repeat(auto-fit, 1fr);
+    margin: 10%;
+}
+
+.bandLogo img {
+    width: 120%;
+    object-fit: cover;
+    max-width: 500px;
+    /* min-width: 200px; */
 }
 
 .bandLogo {
@@ -545,10 +553,7 @@ form .btn {
     }
 }
 
-.bandLogo img {
-    width: 120%;
-    object-fit: cover;
-}
+
 
 .cover-container :nth-child(20) {
     order: 1;
@@ -576,10 +581,8 @@ form .btn {
 
 .cover-container :nth-child(9) {
     order: 6;
-}
-
-.cover-container :nth-child(9) img {
-    width: 100px;
+    max-width: 200px;
+    rotate: -10deg;
 }
 
 .cover-container :nth-child(1) {
@@ -600,6 +603,7 @@ form .btn {
 
 .cover-container :nth-child(7) {
     order: 11;
+    rotate: -15deg;
 }
 
 .cover-container :nth-child(27) {
@@ -620,6 +624,7 @@ form .btn {
 
 .cover-container :nth-child(6) {
     order: 16;
+    rotate: 30deg;
 }
 
 .cover-container :nth-child(22) {
@@ -678,4 +683,5 @@ form .btn {
     font-family: "Brushield Italic", sans-serif;
     font-size: 2.5rem;
     color: white;
+    text-align: center;
 }
