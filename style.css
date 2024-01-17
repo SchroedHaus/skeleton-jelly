@@ -682,3 +682,7 @@ form .btn {
     color: white;
     text-align: center;
 }
+
+.subheading {
+    font-size: 1.25rem;
+}
