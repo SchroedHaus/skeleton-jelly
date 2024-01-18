@@ -4,6 +4,14 @@
     src: url('Brushield\ italic.ttf') format('truetype');
 }
 
+* {
+    box-sizing: border-box;
+}
+
+main {
+    min-width: 0;
+}
+
 :root {
     --navBack: rgba(55, 52, 56, 1);
     --background: rgb(129, 196, 85);
@@ -220,29 +228,28 @@ header {
 
 .content {
     text-align: center;
-    border: 3px solid var(--pink);
+    border: 3px solid white;
     margin: 100px 15%;
     padding: 20px;
     background: rgba(0, 0, 0, 0.603);
 }
 
 .content h1  {
-    font-size: 6rem;
-    line-height: 4rem;
-    color: var(--pink);
+    font-size: 15vmin;
+    /* line-height: 15vmin; */
+    color: white;
     font-family: 'Brushield Italic', sans-serif;
 }
 
 .content h2 {
     font-family: 'Brushield Italic', sans-serif;
-    color: var(--pink);
-    font-size: 4rem;
+    color: white;
+    font-size: 10vmin;
 }
 
 .content p {
-    font-size: 1.5rem;
-    color: var(--pink);
-    font-weight: bold;
+    font-size: 1.75rem;
+    color: white;
     margin: 1em;
 }
 
@@ -251,19 +258,18 @@ header {
     outline: none;
     padding: 15px;
     border-radius: 4px;
-    color: white;
+    border: solid 2px black;
+    color: black;
     font-size: 1.3rem;
     font-weight: bold;
     cursor: pointer;
-    background: var(--pink);
+    background: white;
     /* rotate: -20deg; */
     -webkit-transition: font-size 0.5s;
     transition: font-size 0.5s;
 }
 
 .btn:hover {
-    background: var(--green);
-    color: white;
     font-size: 5rem;
 }
 
@@ -283,8 +289,9 @@ header {
 
 .contact-container .contactHeader {
     font-family: "Brushield Italic";
-    font-size: 5rem;
-    margin: 0;
+    font-size: 15vmin;
+    text-align: center;
+    margin: 20px 0;
 }
 
 form {
@@ -357,12 +364,12 @@ form .btn {
 .eventsContainer h1 {
     text-align: center;
     color: white;
-    font-size: 4rem;
+    font-size: 12vmin;
     font-family: "Brushield Italic", sans-serif;
 }
 
 .eventCard {
-    border: 3px solid var(--green);
+    border: 3px solid white;
     padding: 1em;
     color: white;
     background-color: rgba(0, 0, 0, 0.603);
@@ -429,46 +436,48 @@ form .btn {
 .about-container {
     color: white;
     background-color: var(--navBack);
-    display: flex;
-    flex-direction: column;
-    padding: 100px 20%;
-    font-size: 1.25rem;
+    font-size: 10vmin;
     background: url("gallery/Skellies\ about\ background.png");
     background-size: cover;
     background-position: center;
+    text-align: center;
+    font-family: "Brushield Italic", sans-serif;
 }
 
-.aboutIntro {
-    text-align: center;
-    grid-area: content;
+.about-container h1 {
+    margin: 0;
+    padding-top: 5rem;
 }
 
 .aboutGrid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20px, 600px));
+    gap: 20px;
+    width: 80%;
+    margin: 0 auto;
     justify-content: center;
-    row-gap: 5px;
-    column-gap: 10px;
-
+    padding: 5rem 0;
 }
 
 .picCard {
+    width: 100%;
     position: relative;
+    
 }
 
 .picCard img {
-    max-width: 400px;
-    border: 3px solid var(--green);
+    width: 100%;
+    border: 3px solid white;
 }
 
 .picCard h2 {
     position: absolute;
     left: 50%;
-    bottom: 10px;
+    bottom: 10%;
     transform: translate(-50%);
     font-family: "Brushield Italic", sans-serif;
     color: white;
-    font-size: 4rem;
+    font-size: 10vmin;
 }
 
 .about-container .aboutIntro h1 {
