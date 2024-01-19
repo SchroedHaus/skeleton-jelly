@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @font-face {
     font-family: "Brushield Italic";
-    src: url('Brushield\ italic.ttf') format('truetype');
+    src: url('font/brushield_italic-webfont.woff2') format('woff2');
 }
 
 * {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 main {
@@ -14,13 +18,26 @@ main {
 
 :root {
     --navBack: rgba(55, 52, 56, 1);
-    --background: rgb(129, 196, 85);
-    --pink: #FF0099;
     --green: #00BF63;
+    --pink: #BB2779;
+}
+
+h1, h2 {
+    font-family: "Brushield Italic", sans-serif;
+    margin: 0;
+}
+
+h1 {
+    font-size: 15vmin;
+}
+
+h2 {
+    font-size: 10vmin;
 }
 
 body {
     font-family: 'Genos', sans-serif;
+    color: white;
 }
 
 header {
@@ -33,7 +50,6 @@ header {
 
 nav {
     list-style: none;
-    color: white;
     font-size: 1.2rem;
     position: absolute;
     text-align: left;
@@ -76,17 +92,17 @@ nav a:hover{
 }
 
 .logo-image {
-    width: 200px;
+    width: 300px;
     margin: 0;
 }
 
 .logo-image .whiteLogo {
-    width: 200px;
+    width: 300px;
 }
 
 .logo-image .pinkLogo {
     display: none;
-    width: 200px;
+    width: 300px;
 }
 
 .logo-image:hover .pinkLogo {
@@ -205,16 +221,12 @@ header {
     nav a:hover::before {
         transform: scale(1,1);
     }
-
-    .about-container .aboutIntro h1 {
-        font-size: 5rem;
-    }
 }
 
 .banner-area {
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(andysweddingblackandwhite.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('background/andysweddingblackandwhite.png');
     background-size: cover;
     background-position: center;
 }
@@ -234,22 +246,8 @@ header {
     background: rgba(0, 0, 0, 0.603);
 }
 
-.content h1  {
-    font-size: 15vmin;
-    /* line-height: 15vmin; */
-    color: white;
-    font-family: 'Brushield Italic', sans-serif;
-}
-
-.content h2 {
-    font-family: 'Brushield Italic', sans-serif;
-    color: white;
-    font-size: 10vmin;
-}
-
 .content p {
     font-size: 1.75rem;
-    color: white;
     margin: 1em;
 }
 
@@ -289,6 +287,7 @@ header {
 
 .contact-container .contactHeader {
     font-family: "Brushield Italic";
+    color: black;
     font-size: 15vmin;
     text-align: center;
     margin: 20px 0;
@@ -300,11 +299,13 @@ form {
     grid-gap: 10px;
     font-size: 1.9rem;
     margin: 10px;
+    color: black;
 }
 
 form .message {
     height: 150px;
     vertical-align: text-top;
+    /* color: black; */
 }
 
 form input, form textarea {
@@ -313,6 +314,7 @@ form input, form textarea {
     border-right: none;
     border-top: none;
     border-bottom: var(--green) 2px solid;
+    /* color: black; */
 }
 
 form input:focus,
@@ -354,7 +356,7 @@ form .btn {
     right: 0;
     bottom: 0;
     left: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(barleymow-gig.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("background/guitarplayer.jpg");
     background-size: cover;
     background-position: center;
     filter: grayscale(100%);
@@ -363,30 +365,24 @@ form .btn {
 
 .eventsContainer h1 {
     text-align: center;
-    color: white;
-    font-size: 12vmin;
-    font-family: "Brushield Italic", sans-serif;
 }
 
 .eventCard {
     border: 3px solid white;
     padding: 1em;
-    color: white;
     background-color: rgba(0, 0, 0, 0.603);
     font-size: 1.5rem;
     text-align: center;
 }
 
 .divider {
-    min-height: 5em;
+    min-height: 10em;
     background-color: rgb(163, 163, 163);
     background-image: url("new logos/the\ skellies\ -\ pink.png");
     background-size: 20%;
     background-position: center;
     opacity: 0.6;
 }
-
-
 
 .btn {
     font-family: "Brushield Italic";
@@ -434,18 +430,29 @@ form .btn {
 }
 
 .about-container {
+    position: relative;
+    text-align: center;
     color: white;
-    background-color: var(--navBack);
-    font-size: 10vmin;
-    background: url("gallery/Skellies\ about\ background.png");
+    font-family: "Brushield Italic", sans-serif;
+    font-size: 5rem;
+}
+
+.about-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("background/rockcrowd.jpg");
     background-size: cover;
     background-position: center;
+    filter: grayscale(100%);
+    z-index: -1;
     text-align: center;
-    font-family: "Brushield Italic", sans-serif;
 }
 
 .about-container h1 {
-    margin: 0;
     padding-top: 5rem;
 }
 
@@ -480,14 +487,6 @@ form .btn {
     font-size: 10vmin;
 }
 
-.about-container .aboutIntro h1 {
-    font-family: "Brushield Italic";
-    color: var(--green);
-    text-align: center;
-    font-size: 4rem;
-    margin: 0;
-}
-
 .cover-container {
     padding: 30px 10%;
     position:relative;
@@ -500,7 +499,7 @@ form .btn {
     right: 0;
     bottom: 0;
     left: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("background/brick\ wall.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("background/brickwallbackground.jpg");
     background-size: cover;
     background-position: center;
     filter: grayscale(100%);
@@ -517,7 +516,6 @@ form .btn {
 .logoFlexBox {
     display: grid;
     height: 100%;
-    /* grid-template-rows: auto; */
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin: 10%;
 }
@@ -686,10 +684,8 @@ form .btn {
 }
 
 .coverHeader {
-    font-family: "Brushield Italic", sans-serif;
-    font-size: 2.5rem;
-    color: white;
     text-align: center;
+    padding-top: 5em;
 }
 
 .subheading {
