@@ -4,6 +4,10 @@
     src: url('font/brushield_italic-webfont.woff2') format('woff2');
 }
 
+body {
+    overflow-x: hidden;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -33,6 +37,11 @@ h1 {
 
 h2 {
     font-size: 10vmin;
+}
+
+p {
+    font-size: clamp(1rem, 3vmin, 2rem);
+    padding: 1em;
 }
 
 body {
@@ -240,15 +249,10 @@ header {
 
 .content {
     text-align: center;
-    border: 3px solid white;
+    /* border: 3px solid white; */
     margin: 100px 15%;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.603);
-}
-
-.content p {
-    font-size: 1.75rem;
-    margin: 1em;
+    /* background: rgba(0, 0, 0, 0.603); */
 }
 
 .btn {
@@ -371,7 +375,7 @@ form .btn {
     border: 3px solid white;
     padding: 1em;
     background-color: rgba(0, 0, 0, 0.603);
-    font-size: 1.5rem;
+    font-size: 5vmin;
     text-align: center;
 }
 
@@ -389,52 +393,15 @@ form .btn {
     font-size: 3rem;
 }
 
-.image {
-    width: 400px;
-}
-
-.grid {
-    display: flex;
-    flex-wrap: wrap;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
-    align-content: center;
-    gap: 10px;
-    min-height: 100vh;
-    margin: 2em;
-}
-
-.grid img {
-    width: 400px;
-    cursor: pointer;
-}
-
-#lightbox {
-    position: fixed;
-    z-index: 999;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,.8);
-    display: none;
-}
-
-#lightbox.active {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#lightbox img {
-    width: 90%;
-}
-
 .about-container {
     position: relative;
     text-align: center;
-    color: white;
-    font-family: "Brushield Italic", sans-serif;
-    font-size: 5rem;
+}
+
+.about-intro {
+    width: 75%;
+    margin: 0 auto;
+    font-size: 5vmin;
 }
 
 .about-container::before {
@@ -463,13 +430,14 @@ form .btn {
     width: 80%;
     margin: 0 auto;
     justify-content: center;
+    align-items: center;
     padding: 5rem 0;
 }
 
 .picCard {
     width: 100%;
     position: relative;
-    
+    background: rgba(0, 0, 0, 0.493);
 }
 
 .picCard img {
@@ -515,14 +483,18 @@ form .btn {
 
 .logoFlexBox {
     display: grid;
-    height: 100%;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* height: 100%; */
+    grid-template-columns: repeat(auto-fit, 1fr);
     margin: 10%;
 }
 
+
+
 .bandLogo img {
-    max-width: 120%;
-    object-fit: cover;    
+    max-width: 100%;
+    object-fit: cover;
+    border: .5em solid white;
+    background-color: white;  
 }
 
 .bandLogo {
@@ -530,6 +502,7 @@ form .btn {
     justify-content: center;
     align-items: center;
     position: relative;
+    color: yellow;
 
     &.small {
         grid-row: span 1;
@@ -561,6 +534,7 @@ form .btn {
 
 .cover-container :nth-child(20) {
     order: 1;
+    rotate: -15deg;
 }
 
 .cover-container :nth-child(12) {
@@ -573,10 +547,12 @@ form .btn {
 
 .cover-container :nth-child(18) {
     order: 4;
+    rotate: 10deg;
 }
 
 .cover-container :nth-child(21) {
     order: 9;
+    rotate: 50deg;
 }
 
 .cover-container :nth-child(15) {
@@ -585,7 +561,6 @@ form .btn {
 
 .cover-container :nth-child(9) {
     order: 6;
-    max-width: 200px;
     rotate: -10deg;
 }
 
@@ -595,6 +570,7 @@ form .btn {
 
 .cover-container :nth-child(26) {
     order: 8;
+    z-index: 10;
 }
 
 .cover-container :nth-child(5) {
@@ -624,6 +600,7 @@ form .btn {
 
 .cover-container :nth-child(14) {
     order: 15;
+    left: -30px;
 }
 
 .cover-container :nth-child(6) {
@@ -633,10 +610,12 @@ form .btn {
 
 .cover-container :nth-child(22) {
     order: 17;
+    rotate: -20deg;
 }
 
 .cover-container :nth-child(16) {
     order: 17;
+    rotate: -20deg;
 }
 
 .cover-container :nth-child(13) {
@@ -645,10 +624,13 @@ form .btn {
 
 .cover-container :nth-child(11) {
     order: 19;
+    rotate: 20deg;
 }
 
 .cover-container :nth-child(24) {
     order: 20;
+    padding: 20px;
+    rotate: 10deg;
 }
 
 .cover-container :nth-child(4) {
@@ -657,10 +639,12 @@ form .btn {
 
 .cover-container :nth-child(19) {
     order: 22;
+    rotate: -20deg;
 }
 
 .cover-container :nth-child(17) {
     order: 23;
+    rotate: 15deg;
 }
 
 .cover-container :nth-child(2) {
@@ -669,18 +653,23 @@ form .btn {
 
 .cover-container :nth-child(5) {
     order: 25;
+    padding-top: 10px;
 }
 
 .cover-container :nth-child(25) {
     order: 26;
+    padding-top: 20px;
 }
 
 .cover-container :nth-child(3) {
     order: 27;
+    rotate: 90deg;
+    padding-left: 50px;
 }
 
 .cover-container :nth-child(10) {
     order: 28;
+    rotate: 45deg;
 }
 
 .coverHeader {
@@ -690,4 +679,35 @@ form .btn {
 
 .subheading {
     font-size: 1.25rem;
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 250ms ease-in;
+}
+
+.fade-in.appear {
+    opacity: 1;
+}
+
+.from-left {
+    /* grid-column: 1 / 1; */
+    transform: translateX(-50%)
+}
+
+.from-right {
+    /* grid-column: 3 / 4; */
+    transform: translateX(50%)
+}
+
+.from-left, .from-right {
+    transition:
+        opacity 250ms ease-in,
+        transform 400ms ease-in;
+    opacity: 0;
+}
+
+.from-left.appear,
+.from-right.appear {
+    transform: translateX(0);
 }
