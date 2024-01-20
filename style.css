@@ -427,7 +427,7 @@ form .btn {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20px, 600px));
     gap: 20px;
-    width: 80%;
+    max-width: 1220px;
     margin: 0 auto;
     justify-content: center;
     align-items: center;
