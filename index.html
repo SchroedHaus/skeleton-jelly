@@ -280,8 +280,8 @@
 
             // Check if the user has already accepted cookies
         window.onload = function () {
-            if (getCookie('cookieConsent') !== 'accepted') {
-                document.getElementById('cookie-banner').style.display = 'block';
+            if (getCookie('cookieConsent') === 'accepted') {
+                document.getElementById('cookie-banner').style.display = 'none';
             }
         };
 
