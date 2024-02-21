@@ -416,6 +416,16 @@ form .btn {
     font-size: 13vmin;
 }
 
+.video {
+    text-align: center;
+}
+
+video {
+    max-width: 80%;
+    margin: 0 10%;
+    margin-bottom: 100px;
+}
+
 .cover-container {
     padding: 30px 10%;
     position:relative;
@@ -741,6 +751,8 @@ form .btn {
     background-color: white;
     color: black;
 }
+
+
 
 @media screen and (min-width: 1500px) {
     .nav-toggle-label {
